@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Lyrical Website</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/LyricalAI logo.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6=.1.0/js/all.js" crossorigin="anonymous"></script>
+
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+      <link href="{{ url_for('static', filename='css/style_final.css') }}" rel="stylesheet" />
+       <!--<link href="./css/style_final.css" rel="stylesheet" />-->
+      <style>
+                              .slidecontainer {
+                                width: 100%;
+                              }
+
+                              .slider {
+                                -webkit-appearance: none;
+                                width: 100%;
+                                height: 25px;
+                                background: #d3d3d3;
+                                outline: none;
+                                opacity: 0.7;
+                                -webkit-transition: .2s;
+                                transition: opacity .2s;
+                              }
+
+                              .slider:hover {
+                                opacity: 1;
+                              }
+
+                              .slider::-webkit-slider-thumb {
+                                -webkit-appearance: none;
+                                appearance: none;
+                                width: 25px;
+                                height: 25px;
+                                background: #04AA6D;
+                                cursor: pointer;
+                              }
+
+                              .slider::-moz-range-thumb {
+                                width: 25px;
+                                height: 25px;
+                                background: #04AA6D;
+                                cursor: pointer;
+                              }
+      </style>
+    </head>
+    <body id="page-top">
+        <nav class="navbar">
+     <!-- LOGO -->
+     <img src='https://pick-up-line-generator.ai-camp.org/static/images/aicamplogo.png' width=60px height=60px title='AI camp logo' />
+     <!-- NAVIGATION MENU -->
+     <ul class="nav-links">
+       <!-- NAVIGATION MENUS -->
+       <div class="menu">
+         <li><a href={{ url_for('home')}}>Home</a></li>
+         <li><a href={{ url_for('spec')}}>Product Specs</a></li>
+         <li><a href={{ url_for('team_desc')}}>About Us</a></li>
+       </div>
+     </ul>
+   </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0textuppercase" >LyricAI</h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">The AI for your lyrical needs.</h2>
+                        <a class="btn btn-tertiary" href="#product">Try Product</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="masthead text-center" id="product">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8">
+<!--                         <h2 class="text-white mb-4" align = 'center'>Generate some lyrics!</h2> -->
+                        <form action="{{url_for('generate_text')}}" method="POST" source="custom" name="form-1">
+                          <h3 class="text-white mb-4" align = 'center'>Generate some lyrics!</h3>
+                          <label for="fname", style="color:GhostWhite;">Prompt:</label>                            <br>
+                          <!-- User Input -->
+                          <input type="text" name="fname" id="fname", value="", placeholder="Insert your prompt here", size="30", required> <br>
+                          <div class="slidecontainer">
+                            <label for="temperature" , style="color:GhostWhite;">Randomness:</label> <br>
+                            <input type="range" name="temperature" id="temperature" min="10" max="100" value="10">
+                          </div> 
+                          <label for="genre", style="color:GhostWhite;">Choose a genre: </label> <br>
+                          <select name="genre" id="genre">
+                          <option value="sadness">Sadness</option>
+                          <option value="euphoric">Euphoric</option>
+                          <option value="tenderness">Tenderness</option>
+                          <option value="tension">Tension</option>
+                          <option value="cheerful">Cheerful</option>
+                          </select> <br> <br>
+                          <btn> <input class="btn-submit" type="submit" value="Submit" id="generate_text" id="generate_text"></btn> <br><br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+              <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                  <div action="{{url_for('results')}}" class="col-lg-8">
+                      <h3 style="color:GhostWhite;" align = 'center'>Results:</h3> <br><br>
+                      <ul style="color:GhostWhite;" id="generated_ul">
+                        <pre>{{results|safe}}</pre>
+                      </ul >
+                  </div>
+                </div>
+              </div>
+        </section>
+    </body>
+</html>

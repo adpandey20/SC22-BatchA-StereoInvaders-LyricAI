@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Lyrical Website</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/LyricalAI logo.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6=.1.0/js/all.js" crossorigin="anonymous"></script>
+
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+      <link href="{{ url_for('static',filename='css/style_final.css') }}" rel="stylesheet" />
+        <!-- <link href="css/style_one.css" rel="stylesheet" /> -->
+      <style>
+                              .slidecontainer {
+                                width: 100%;
+                              }
+
+                              .slider {
+                                -webkit-appearance: none;
+                                width: 100%;
+                                height: 25px;
+                                background: #d3d3d3;
+                                outline: none;
+                                opacity: 0.7;
+                                -webkit-transition: .2s;
+                                transition: opacity .2s;
+                              }
+
+                              .slider:hover {
+                                opacity: 1;
+                              }
+
+                              .slider::-webkit-slider-thumb {
+                                -webkit-appearance: none;
+                                appearance: none;
+                                width: 25px;
+                                height: 25px;
+                                background: #04AA6D;
+                                cursor: pointer;
+                              }
+
+                              .slider::-moz-range-thumb {
+                                width: 25px;
+                                height: 25px;
+                                background: #04AA6D;
+                                cursor: pointer;
+                              }
+      </style>
+    </head>
+    <body id="page-top">
+        <nav class="navbar">
+     <!-- LOGO -->
+     <img src='https://pick-up-line-generator.ai-camp.org/static/images/aicamplogo.png' width=60px height=60px title='AI camp logo' />
+     <!-- NAVIGATION MENU -->
+     <ul class="nav-links">
+       <!-- NAVIGATION MENUS -->
+       <div class="menu">
+         <li><a href={{ url_for('home')}}>Home</a></li>
+         <li><a href={{ url_for('spec')}}>Product Specs</a></li>
+         <li><a href={{ url_for('team_desc')}}>About Us</a></li>
+       </div>
+     </ul>
+   </nav>
+
+        <!-- Projects-->
+      
+     <style>
+.rectangle{
+  text-align: center;
+  background-color: #8ABD91;
+  padding: 25px;
+  margin: 0;
+  font-size: 200%;
+}
+</style>
+
+<div class="rectangle">Our Process</div>
+        <section class="projects-section bg-light" id="projects">
+            <div class="container px-4 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-8 col-lg-7">
+                      <img class="img-fluid mb-3 mb-lg-0" width = 400 length = 400 src="./static/brain_new.png" alt="..." />
+                  </div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>Project Description</h4>
+                          <p class="text-black-50 mb-0">Our project is a lyric AI. The AI is intended to take inputs of emotion, genre, and randomness from users and generate lyrics based on those inputs. The AI will be trained using a dataset of song lyrics with emotions and genres assigned to them. Randomness controls the temperature of the generated text. </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project One Row-->
+                <div class= "row gx-0 mb-4 mb-lg-5 align-items-center" "spaced element">
+                    <div class="col-lg-6"><img align = "middle" width = 500 length = 500 class="img-fluid" src="./static/writing.png" alt="..." /></div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                  
+                                    <h4 class="text-white">Purpose</h4>
+                                    <p class="mb-0 text-white-50">The purpose of the LyricAl is to help humans in their creative process and try to see if an unfeeling algorithm can understand the emotions involved in songwriting. By doing this we are opening up many possibilities for AI in artistic fields as a tool to help new and experienced artists alike in their creative work.</p>
+                                    <hr class="d-none d-lg-block mb-0 ms-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+              <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" width = 400 length = 400 src="./static/obstacle.png" alt="..." /></div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>Challenges</h4>
+                          <bl></bl>
+                          <p class="text-black-50 mb-0">
+                            <dl>
+                              <dt>Data -</dt>
+                              <dd>
+                                In our data we needed to have data for the genre, lyrics, and accurate emotion analysis of the lyrics. We were having difficulty finding a single dataset that meets all requirements but have since solved this and found a dataset with everything but lyrics and cross referenced that dataset with the Genius API for the lyrics.
+                              </dd>
+                              <bl></bl>
+                              <dt>
+                                Website -
+                              </dt>
+                              <dd>
+                                We were having trouble making our website as none of us knew how to use html and we had no idea how to make a website from scratch. After some struggling we were given the github with the Scaffold we could use for the website.
+                              </dd>
+                              <dt>
+                                Stolen Lyrics -
+                              </dt>
+                              <dd>
+                                A problem we had is the AI is taking lyrics directly from other songs instead of generating its own. This was most likely due to a few songs that are hours long. With some extra training we made sure the AI used its data in a more creative way.
+                              </dd>
+                              <dt>
+                                Language! - 
+                              </dt>
+                              <dd>
+                                Our AI is extremely vulgar probably due to the many rap songs it has been trained with. Because of this we have added a warning for the explicit content it may or may not generate.
+                              </dd>
+                              </dl>
+                          </p>
+                        </div>
+                    </div>
+                </div>
+              
+                 <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4> <font size=50>Tech Used</font></h4>
+                            <p class="text-black-50 mb-0"> </p>
+                          <table class="center" style="margin-top:10px; margin-left:10px;" cellspacing=200 >
+                            <tr>
+                              <td>
+                          <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="./static/tech1.png" alt="..." width = 200 length = 200 /></div>
+                              </td>
+                              <td>
+                           <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="./static/tech2.png" alt="..." width = 200 length = 200 /></div>
+                              </td>
+
+                              <td>
+                           <div class="col-xl-8 col-lg-7"><img src="./static/tech3.png" alt="..." width = 300 length = 300 /></div>
+                              </td>
+                             </tr>
+                            <tr>
+                              <td>
+                           <div class="col-xl-8 col-lg-7"><img src="./static/tech4.png" alt="..." width = 300 length = 300 /></div>
+                              </td>
+                              <td>
+                           <div class="col-xl-8 col-lg-7"><img src="./static/tech5.png" alt="..." width = 300 length = 300 /></div>
+                              </td>
+                              <td>
+                           <div class="col-xl-8 col-lg-7"><img src="./static/tech6.png" alt="..." width = 300 length = 300 /></div>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Your Website 2022</div></footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
